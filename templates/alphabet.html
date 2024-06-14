@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alternox</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="static/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-jVNkk4b+q4V4ZOL79ErwHfdH/8RhdptBdVRsEnpzQnc/r8iMCp4tRQ5jO6o3LyPl" crossorigin="anonymous">
+</head>
+<body>
+
+<header>
+    <div class="header-left"> 
+        <i class="fa fa-stethoscope" aria-hidden="true" style="color: #E63B60;font-size: xx-large;padding-right: 10px;font-weight: bold;margin-left: -4px;"></i>
+        <h1 style="color: #E63B60;">Alternox - Your step towards affordable healthcare</h1>
+    </div>
+    <div class="header-right" style="font-weight: bold;">
+        <div class="searchmedicine" id="searchButtonmedicine">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            Search
+        </div>
+        {% if 'user_name' in session %}
+        <div class="user-info">
+            <i class="fa fa-user" style="font-size: larger;" aria-hidden="true"></i>
+            <span style="color: #E63B60;padding: 4px;font-size: larger;">{{ session['user_name'] }}</span>
+
+            <!-- <span class="fa fa-user" aria-hidden="true">{{ session['user_name'] }}</span> -->
+            <form action="/logout" method="post">
+                <button type="submit" class="logout-btn">
+                    <i class="fa fa-sign-out" style="font-size: larger;"></i>
+                </button>
+            </form>
+        </div>
+        {% else %}
+            <div class="login">
+                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                Login
+            </div>
+        {% endif %}
+        <div class="home" id="homeButton">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            Home
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <h2>Browse diferent medicines and view their details</h2>
+    <button class="redirect" id="redirectToHome" style="font-size: small;height: 36px;width: 70px;color: black;background-color: #f0f8ff;margin-top: 15px;">
+        <i class="fa fa-home" aria-hidden="true" style="font-size: medium;"></i> Back</button>
+</div>
+
+
+<div class="medicine-container-alphabet">
+    {% for item in data %}
+        <div class="medicine-alphabet-card details_alphabet-button" data-id="{{ loop.index }}">
+            {% if "Capsule" in item.dosage_form or "Tablet" in item.dosage_form %}
+                <img class="medicine-image" src="static/images/capsule.png" alt="Image 1">
+            {% elif "Ijection" in item.dosage_form or "Tablet" in item.dosage_form %}
+                <img class="medicine-image" src="static/images/injection.png" alt="Image 2">
+            {% elif "Powder" in item.dosage_form or "Syrup" in item.dosage_form %}
+                <img class="medicine-image" src="static/images/suspension.png" alt="Image 3">
+            {% else %}
+                <img class="medicine-image" src="static/images/medicine.png" alt="Image 4">
+            {% endif %}
+            <div class="medicine-card-text">
+                <h2>{{ item.brand_name }}</h2>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<!-- Login Panel -->
+<div id="loginPanel" class="login-panel">
+    <div class="login-header">
+        <h2>Login</h2>
+        <button id="closeButton" class="close-button">×</button>
+    </div>
+    <div class="login-box">
+        <div id="loginError" class="error-message" style="display: none; color: red;"></div>
+
+        <form id="loginForm" action="/login" method="POST">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+            </div>
+            <button id="loginButton" class="submit-button" type="submit">Login</button>
+        </form>
+        <div class="additional-options">
+            <p>Don't have an account yet? <a href="#" class="signup-link">Sign up</a></p>
+            <p>Need help? Visit our <a href="#">help center</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Signup Panel -->
+<div id="signupPanel" class="login-panel">
+    <div class="login-header">
+        <h2>Sign Up</h2>
+        <button id="closeSignupButton" class="close-button">×</button>
+    </div>
+    <div class="login-box">
+        <div id="signupError" class="error-message" style="display: none; color: red;"></div>
+
+        <form id="signupForm" action="/signup" method="POST">
+            <div class="form-group">
+                <label for="signupName">Name:</label>
+                <input type="name" id="signupName" name="signupName" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="signupEmail">Email:</label>
+                <input type="email" id="signupEmail" name="signupEmail" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="signupPassword">Password:</label>
+                <input type="password" id="signupPassword" name="signupPassword" placeholder="Enter your password">
+            </div>
+            <div class="form-group">
+                <label for="confirmsignupPassword">Confirm Password:</label>
+                <input type="password" id="confirmsignupPassword" name="confirmsignupPassword" placeholder="Confirm your password">
+            </div>
+            <button id="signUpButton" class="submit-button" type="submit">Sign Up</button>
+        </form>
+
+        <div class="additional-options">
+            <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+            <p>Need help? Visit our <a href="#">help center</a></p>
+        </div>
+    </div>
+</div>
+
+<div id="searchPanel" class="login-panel">
+    <div class="login-header">
+        <h2>Details</h2>
+        <button id="closeSearchButton" class="close-button">×</button>
+    </div>
+    <div class="login-box">
+        <form action="{{ url_for('medicine') }}" method="POST">
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label for="manufacturer">Manufacturer:</label>
+                    <input type="text" id="panel-manufacturer" name="manufacturer" placeholder="Enter manufacturer" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="price">Price:</label>
+                    <input type="text" id="panel-price" name="price" placeholder="Enter price" readonly>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="chemicalComposition">Chemical Composition:</label>
+                <input type="text" id="panel-chemicalComposition" name="chemicalComposition" placeholder="Enter chemical composition" readonly>
+            </div>
+            <div class="form-group-row">
+                <div class="form-group">
+                    <label for="medicineType">Medicine Type:</label>
+                    <input type="text" id="panel-medicineType" name="medicineType" placeholder="Enter medicine type" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="dosage">Dosage:</label>
+                    <input type="text" id="panel-dosage" name="dosage" placeholder="Enter dosage" readonly>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="otherDetails">Other Details:</label>
+                <input type="text" id="panel-otherDetails" name="otherDetails" placeholder="Enter other details" readonly>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="static/medicine.js"></script>
+</body>
+</html>

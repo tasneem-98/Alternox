@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alternox</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="static/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-jVNkk4b+q4V4ZOL79ErwHfdH/8RhdptBdVRsEnpzQnc/r8iMCp4tRQ5jO6o3LyPl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-FaTdL5e+B8v3icLaaHYB5DeqpqfNp8zZ+j5GYFvSHX2AHS9+3XzrG8kTkRcbF9xx" crossorigin="anonymous">
+
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <i class="fa fa-stethoscope" aria-hidden="true" style="color: #E63B60;font-size: xx-large;padding-right: 10px;font-weight: bold;margin-left: -4px;"></i>
+        <h1 style="color: #E63B60;">Alternox - Your step towards affordable healthcare</h1>
+    </div>
+    <div class="header-right" style="font-weight: bold;">
+        <div class="searchmedicine" id="searchButtonmedicine">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            Search
+        </div>
+        {% if 'user_name' in session %}
+        <div class="user-info">
+            <i class="fa fa-user" style="font-size: larger;" aria-hidden="true"></i>
+            <span style="color: #E63B60;padding: 4px;font-size: larger;">{{ session['user_name'] }}</span>
+
+            <!-- <span class="fa fa-user" aria-hidden="true">{{ session['user_name'] }}</span> -->
+            <form action="/logout" method="post">
+                <button type="submit" class="logout-btn">
+                    <i class="fa fa-sign-out" style="font-size: larger;"></i>
+                </button>
+            </form>
+        </div>
+        {% else %}
+            <div class="login" id="loginbuttonsize">
+                <i class="fa fa-sign-in" aria-hidden="true"></i>
+                Login
+            </div>
+        {% endif %}
+        <div class="home" id="homeButton">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            Home
+        </div>
+    </div>
+</header>
+    
+
+<div>
+    <div>
+        <h2>Common Conditions Saving with Alternox</h2>
+    </div>
+</div>
+
+<!-- Cards Section -->
+<div class="container">
+    <div class="card">
+        <img src="static/images/image11.png" alt="Image 1">
+        <div class="card-content">
+            <h2>Kidney Stones</h2>
+            <p>91% average discount</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="static/images/image22.png" alt="Image 2">
+        <div class="card-content">
+            <h2>Depression</h2>
+            <p>67% average discount</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="static/images/image3.png" alt="Image 3">
+        <div class="card-content">
+            <h2>Hypertension</h2>
+            <p>58% average discount</p>
+        </div>
+    </div>
+    <div class="card">
+        <img src="static/images/image4.png" alt="Image 4">
+        <div class="card-content">
+            <h2>Weight Loss</h2>
+            <p>57% average discount</p>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div>
+        <h5>Based on average user saving between January 2022 to December 2022. Search for your description on your website or mobile app to see how much you can save</h5>
+    </div>
+</div>
+<div>
+    <div>
+        <h2>How Alternox Works</h2>
+    </div>
+</div>
+
+<!-- Images Side by Side with Text Below -->
+<div class="row">
+    <div class="col">
+        <img src="static/images/Compare_prices1.png" alt="Image 6">
+        <h3>Compare prices</h3>
+        <p>Drug prices vary by pharmacy. Use Alternox to find current prices and discounts </p>
+    </div>
+    <div class="col">
+        <img src="static/images/browse_medication1.png" alt="Image 5">
+        <h3>Browse medicines</h3>
+        <p>Check catalogue or serach for specific medicine </p>
+    </div>
+    <div class="col">
+        <img src="static/images/medicine_details1.png" alt="Image 7">
+        <h3>View medicine details</h3>
+        <p>View medicine details and save your earnings, and be satisfied</p>
+    </div>
+</div>
+
+<div>
+    <div>
+        <h2>Browse medications</h2>
+        <p>research prescription and over-the-counter medications from A to Z. Compare drug prices and start saving</p>
+    </div>
+</div>
+    
+<!-- Circles with Letters A to Z -->
+<div class="rowCircle" id="circlesRow">
+    <!-- Circles will be dynamically added here -->
+</div>
+
+<!-- Login Panel -->
+<div id="loginPanel" class="login-panel">
+    <div class="login-header">
+        <h2>Login</h2>
+        <button id="closeButton" class="close-button">×</button>
+    </div>
+    <div class="login-box">
+        <div id="loginError" class="error-message" style="display: none; color: red;"></div>
+        <form id="loginForm" action="/login" method="POST">
+
+        <!-- <form action="/login" method="POST"> -->
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+            </div>
+            <button id="loginButton" class="submit-button" type="submit">Login</button>
+        </form>
+        <div class="additional-options">
+            <p>Don't have an account yet? <a href="#" class="signup-link">Sign up</a></p>
+            <p>Need help? Visit our <a href="#">help center</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Signup Panel -->
+<div id="signupPanel" class="login-panel">
+    <div class="login-header">
+        <h2>Sign Up</h2>
+        <button id="closeSignupButton" class="close-button">×</button>
+    </div>
+    <div class="login-box">
+        <div id="signupError" class="error-message" style="display: none; color: red;"></div>
+
+        <form id="signupForm" action="/signup" method="POST">
+            <div class="form-group">
+                <label for="signupName">Name:</label>
+                <input type="name" id="signupName" name="signupName" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="signupEmail">Email:</label>
+                <input type="email" id="signupEmail" name="signupEmail" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="signupPassword">Password:</label>
+                <input type="password" id="signupPassword" name="signupPassword" placeholder="Enter your password">
+            </div>
+            <div class="form-group">
+                <label for="confirmsignupPassword">Confirm Password:</label>
+                <input type="password" id="confirmsignupPassword" name="confirmsignupPassword" placeholder="Confirm your password">
+            </div>
+            <button id="signUpButton" class="submit-button" type="submit">Sign Up</button>
+        </form>
+        <div class="additional-options">
+            <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+            <p>Need help? Visit our <a href="#">help center</a></p>
+        </div>
+    </div>
+</div>
+
+<script src="static/script.js"></script>
+
+</body>
+</html>

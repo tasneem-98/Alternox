@@ -1,0 +1,600 @@
+/* Some basic styling for demonstration */
+* {
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+body {
+    margin: 0; /* Remove default margin */
+    padding: 35px 70px; /* Add padding to create space on the left and right */
+    font-family: sans-serif;
+}
+
+h1 {
+    color: rgb(120, 98, 218);
+    margin: 0; /* Remove default margin */
+}
+
+#searchButtonmedicine{
+    font-size: larger;
+}
+.login{
+    font-size: larger;
+}
+.logout-btn {
+    font-size: larger;
+}
+.help{
+    font-size: larger;
+}
+
+.home{
+    font-size: larger;
+}
+
+header {
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+}
+.header-right > * {
+    margin-left: 20px;
+}
+
+/* Card Styles */
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+    max-width: 100%; /* Ensure the container does not exceed the viewport width */
+    overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+.card {
+    flex: 0 0 calc(25% - 20px);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    background-color: #f0f8ff; /* Set background color to white */
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 0%; /* Make the image circular */
+    width: 80px; /* Adjust the width of the circular image */
+    height: 80px; /* Adjust the height of the circular image */
+    object-fit: cover; /* Ensure the image covers the entire circle */
+}
+
+.card-content {
+    text-align: center;
+}
+
+.card-content h2 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.card-content p {
+    margin-bottom: 10px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%; /* Ensure the row does not exceed the viewport width */
+}
+
+.col {
+    flex: 0 0 33%;
+    max-width: 33%;
+    padding: 0 70px;
+    box-sizing: border-box;
+}
+
+.col img {
+    width: 60%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    font-size: 24px;
+    border: 2px solid rgb(83, 139, 243); /* Add border with black color */
+    transition: background-color 0.3s; /* Add transition effect */
+}
+
+.circle:hover {
+    background-color: rgb(83, 139, 243); /* Change background color on hover */
+    color: #ffffff; /* Change text color on hover */
+}
+
+.rowCircle {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    max-width: 100%; /* Ensure the row does not exceed the viewport width */
+    overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+.login-panel {
+    position: fixed;
+    top: 0;
+    right: -600px; /* Initially hide the panel off-screen */
+    width: 600px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease-in-out; /* Add transition for smooth animation */
+    z-index: 1000; /* Ensure the panel appears above other content */
+    padding: 0 20px;
+}
+
+.login-panel form {
+    padding: 20px;
+}
+
+.login-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.login-panel input,
+.login-panel button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.login-panel button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.login-panel button:hover {
+    background-color: #0056b3;
+}
+
+.login-panel h2 {
+    margin-top: 0;
+}
+
+.close-button {
+    font-size: 20px !important;
+    cursor: pointer !important;
+    background: none !important;
+    border: none !important;
+    color: #000 !important;
+    border-radius: 50% !important;
+    width: 40px !important; /* Adjust size as needed */
+    height: 40px !important; /* Adjust size as needed */
+    text-align: center !important;
+    line-height: 40px !important; /* Center text vertically */
+}
+
+.close-button:hover {
+    color: red;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    margin-top: 10px;
+}
+
+p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+
+.login-box {
+    background-color: #f0f8ff; /* Light blue background color */
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+.additional-options p {
+    margin: 10px 0;
+}
+
+.additional-options p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.additional-options p a:hover {
+    text-decoration: underline;
+}
+
+#searchPanel {
+    position: fixed;
+    top: 0;
+    right: -800px; /* Initially hide the panel off-screen */
+    width: 800px;
+    height: 100%;
+    background-color: white;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease-in-out; /* Add transition for smooth animation */
+    z-index: 1000; /* Ensure the panel appears above other content */
+    padding: 0 20px;
+}
+
+.form-group-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group-row .form-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-group-row .form-group:last-child {
+    margin-right: 0;
+}
+
+.search-box-medicine {
+    background-color: #f0f8ff;  /* Light gray background color */
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto; /* Center the form horizontally */
+    max-width: 1200px; /* Limit the maximum width of the form */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+.search-form-group-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-form-group-row .form-group {
+    flex: 1 1 calc(50% - 10px);
+    margin-right: 20px;
+}
+
+.search-form-group-row .form-group:last-child {
+    margin-right: 0;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+}
+
+.radio-group label {
+    margin-right: 15px;
+}
+
+/* Style for input fields */
+input[type="text"], input[type="range"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="range"]:focus {
+    border-color: #007bff;
+}
+
+/* Style for radio buttons */
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Style for the submit button */
+.submit-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 600px) {
+    .search-form-group-row .form-group {
+        flex: 1 1 100%; /* Full width on smaller screens */
+        margin-right: 0;
+    }
+    
+    input[type="text"], input[type="range"] {
+        width: 100%;
+    }
+}
+
+/* Adjust positions of div elements */
+.form-group {
+    margin-bottom: 10px; /* Add margin between form groups */
+}
+
+.price-group {
+    align-items: center;
+}
+
+.price-slider-container {
+    position: relative;
+}
+
+#price-value {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+
+.Size-group {
+    align-items: center;
+}
+
+.Size-slider-container {
+    position: relative;
+}
+
+#Size-value {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+/*###############################################################################*/
+.medicine-card {
+    display: flex;
+    flex-wrap: wrap; /* Ensure items wrap properly */
+    justify-content: space-between; /* Distribute items evenly */
+    margin-bottom: 20px;
+    max-width: 1200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    background-color: #f0f8ff;
+    align-items: center; /* Align items vertically */
+    margin: 20px auto;
+}
+
+.medicine-card img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%; /* Make the image circular */
+    height: 80px;
+    object-fit: cover;
+    margin-left: 10px;
+}
+
+.medicine-card-text {
+    text-align: left;
+    flex: 0 0 35%; /* Set a fixed width for the text */
+    padding: 0 20px; /* Add some padding for spacing */
+}
+
+.medicine-card-price {
+    display: flex; /* Arrange price and details horizontally */
+    align-items: center; /* Align items vertically */
+    flex: 1; /* Allow the price and details to take up remaining space */
+    justify-content: space-between; /* Distribute items evenly */
+    padding: 0 100px; /* Add some padding for spacing */
+}
+
+.medicine-card-price h2 {
+    margin: 0; /* Remove margin for price */
+}
+
+.medicine-card-price p {
+    margin: 0; /* Remove margin for details */
+    font-size: 14px; /* Adjust font size as needed */
+    color: #666; /* Adjust color as needed */
+}
+
+
+.details-button {
+    width: 35%;
+    height: 38px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.details-button:hover {
+    background-color: #0056b3;
+}
+
+/*####################################################################################*/
+
+.medicine-container-alphabet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjust as needed */
+}
+
+.medicine-alphabet-card {
+    display: flex;
+    flex-wrap: wrap; /* Ensure items wrap properly */
+    justify-content: space-between; /* Distribute items evenly */
+    margin-bottom: 20px;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    background-color: #f0f8ff;
+    align-items: center; /* Align items vertically */
+}
+
+.medicine-alphabet-card img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%; /* Make the image circular */
+    height: 80px;
+    object-fit: cover;
+    margin-left: 10px;
+}
+
+.medicine-card-text {
+    text-align: left;
+    flex: 0 0 55%; /* Set a fixed width for the text */
+    padding: 0 20px; /* Add some padding for spacing */
+}
+
+.medicine-card-price {
+    display: flex; /* Arrange price and details horizontally */
+    align-items: center; /* Align items vertically */
+    flex: 1; /* Allow the price and details to take up remaining space */
+    justify-content: space-between; /* Distribute items evenly */
+    padding: 7px 44px; /* Add some padding for spacing */
+}
+
+.medicine-card-price h2 {
+    margin: 0; /* Remove margin for price */
+}
+
+.medicine-card-price p {
+    margin: 0; /* Remove margin for details */
+    font-size: 14px; /* Adjust font size as needed */
+    color: #666; /* Adjust color as needed */
+}
+
+.details_alphabet-button {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.details_alphabet-button:hover {
+    background-color: #0056b3;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.logout-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.fa-right-from-bracket {
+    font-size: 20px; /* Adjust size as needed */
+    color: #333; /* Adjust color as needed */
+    margin-left: 10px; /* Adjust spacing between icon and username */
+}
+
+.price-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.small-text {
+    font-size: 12px; /* Adjust the font size as needed */
+    color: #4330f1; /* Adjust the color as needed */
+    font-weight: bold;
+}
