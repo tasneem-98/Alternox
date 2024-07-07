@@ -10,7 +10,7 @@ The novelty of Alternox lies in its unique combination of features that distingu
 ## Design Diagram
 ![image](https://github.com/tasneem-98/Alternox/assets/34083800/fa3fd0a1-aa09-44af-9f41-68659f8346a1)
 
-<center><small> _Figure 1: Module-wise Design Diagram of Alternox_ </small></center>
+<center> _Figure 1: Module-wise Design Diagram of Alternox_ </center>
 
 ## Components:
 1. The user account component is available to the customer on the homepage and the user can either choose to create a new account using the option to Sign up or can log into the application using an existing account through Sign in, the creadentials of which would be saved into the database system. In case of Sign in, the credentials would be verified from the database system and upon verification, the customer is granted access to the applicaton. However, user account creation is not mandatory in order to use the application.
@@ -29,6 +29,6 @@ The implementation of Alternox yields significant and tangible results. Users ex
 
 ![image](https://github.com/tasneem-98/Alternox/assets/34083800/60fc1996-faef-4efa-86cc-7b46c9dc5040)
 
-<center><small> _Figure 2: Parameter based alternate medicine search through Alternox_ </small></center>
+<small> _Figure 2: Parameter based alternate medicine search through Alternox_ </small>
 
 All in all, Alternox not only benefits individual users but also contributes to the broader goal of making healthcare more accessible and affordable for all. With a principal focus on ensuring economic viability and potency, the Alternox system not only elevates patient’s well-being but also plays a significant role in the optimization of healthcare resources and their sustainability.
