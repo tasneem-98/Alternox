@@ -8,9 +8,10 @@ In order to address the underlying concern of cost differences of vital medicine
 The novelty of Alternox lies in its unique combination of features that distinguish it from existing solutions. It employs machine learning algorithms like K-Nearest Neighbours (k-NN) and Cosine Similarity to precisely match medications based on their chemical composition, and includes a comprehensive cost analysis which not only suggests alternatives but also highlights the price differences and potential savings for users. The user-centric interface allows users to tailor the search based on their specific needs and search parameters, making the system highly user-centric, setting a new standard in healthcare technology.
 
 ## Design Diagram
-![image](https://github.com/tasneem-98/Alternox/assets/34083800/fa3fd0a1-aa09-44af-9f41-68659f8346a1)
-
-<center> _Figure 1: Module-wise Design Diagram of Alternox_ </center>
+<p align="center">
+  <img src="[images/design_diagram.png](https://github.com/tasneem-98/Alternox/assets/34083800/fa3fd0a1-aa09-44af-9f41-68659f8346a1)" alt="System Design Diagram" width="600"><br>
+  <small>Figure 1:  Module-wise Design Diagram of Alternox.</small>
+</p>
 
 ## Components:
 1. The user account component is available to the customer on the homepage and the user can either choose to create a new account using the option to Sign up or can log into the application using an existing account through Sign in, the creadentials of which would be saved into the database system. In case of Sign in, the credentials would be verified from the database system and upon verification, the customer is granted access to the applicaton. However, user account creation is not mandatory in order to use the application.
