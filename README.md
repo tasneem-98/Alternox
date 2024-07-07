@@ -34,3 +34,36 @@ The implementation of Alternox yields significant and tangible results. Users ex
 </p>
 
 All in all, Alternox not only benefits individual users but also contributes to the broader goal of making healthcare more accessible and affordable for all. With a principal focus on ensuring economic viability and potency, the Alternox system not only elevates patient’s well-being but also plays a significant role in the optimization of healthcare resources and their sustainability.
+
+
+## Installation Guide:
+### Installation Steps
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/your-username/medicine-recommendation-system.git
+   cd medicine-recommendation-system
+   ```
+
+2. **Create a virtual environment (recommended):**
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
+
+3. **Install dependencies:**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Set up configuration (if applicable):**
+   - Provide instructions on any configuration files that need to be set up (e.g., database connections, API keys).
+
+5. **Run the system:**
+
+   ```bash
+   python app.py
+   ```
