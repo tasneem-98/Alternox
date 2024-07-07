@@ -9,7 +9,7 @@ The novelty of Alternox lies in its unique combination of features that distingu
 
 ## Design Diagram
 <p align="center">
-  <img src="![image](https://github.com/tasneem-98/Alternox/assets/34083800/24cb27ee-0817-46f9-bd23-9c4dd40eb14a)" alt="System Design Diagram" width="600"><br>
+  ![image](https://github.com/tasneem-98/Alternox/assets/34083800/6da2f720-0120-4133-aedb-2cf89b452445)
   <small>Figure 1:  Module-wise Design Diagram of Alternox.</small>
 </p>
 
