@@ -8,7 +8,7 @@ In order to address the underlying concern of cost differences of vital medicine
 The novelty of Alternox lies in its unique combination of features that distinguish it from existing solutions. It employs machine learning algorithms like K-Nearest Neighbours (k-NN) and Cosine Similarity to precisely match medications based on their chemical composition, and includes a comprehensive cost analysis which not only suggests alternatives but also highlights the price differences and potential savings for users. The user-centric interface allows users to tailor the search based on their specific needs and search parameters, making the system highly user-centric, setting a new standard in healthcare technology.
 
 ## Design Diagram
-Figure 1: High-level design diagram illustrating the flow of data and processing in the Medicine Recommendation System.
+![image](https://github.com/tasneem-98/Alternox/assets/34083800/8e64f95b-66e4-4570-bc4a-5d16d82f3bd3)
 
 ## Components:
 User Input Interface: Accepts user-provided symptoms and preferences.
