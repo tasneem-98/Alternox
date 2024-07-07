@@ -37,12 +37,10 @@ All in all, Alternox not only benefits individual users but also contributes to 
 
 
 ## Installation Guide:
-### Installation Steps
-
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/medicine-recommendation-system.git
+   git clone https://github.com/tasneem-98/Alternox.git
    cd medicine-recommendation-system
    ```
 
@@ -59,10 +57,7 @@ All in all, Alternox not only benefits individual users but also contributes to 
    pip install -r requirements.txt
    ```
 
-4. **Set up configuration (if applicable):**
-   - Provide instructions on any configuration files that need to be set up (e.g., database connections, API keys).
-
-5. **Run the system:**
+4. **Run the system:**
 
    ```bash
    python app.py
